@@ -11,13 +11,17 @@ function addItem (){
     todos.push({ description: description.value, done: false});
     description.value = "";
 }
+function removeItem(item: any): void{
+    todos.splice(todos.indexOf(item), 1);
+}
 </script>
 
 <template>
   <div v-for="item in todos">
     <span :style="{ 'text-decoration': item.done ? 'line-through' : '' }">{{ item.description }} {{ item.done }}</span>
+    <button @click="removeItem(item)">Remove</button>
   </div>
-  <input type="text" v-model="description" @keyup.enter="addItem()"> 
+  <input type="text" v-model="description" @keyup.enter="addItem()">
 </template>
 
 <style scoped></style>
