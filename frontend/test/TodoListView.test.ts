@@ -20,5 +20,5 @@ test("Deve testar a tela de todo list", async function () {
   });
   await sleep(100);
   console.log(wrapper.html());
-  expect(wrapper.get(".completed").text()).toBe("33%");
+  expect(wrapper.get(".completed").text()).toBe("0%");
 });
