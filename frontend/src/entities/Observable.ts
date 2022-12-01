@@ -12,6 +12,7 @@ export default class Observable {
   }
 
   notify(event: string, data: any) {
+    console.log(event, data);
     for (const observer of this.observers) {
       if (observer.event === event) {
         observer.callback(data);
